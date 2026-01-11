@@ -19,7 +19,7 @@ public class employee
         return bonus;
     }
     
-    public void displayemployee()
+    public void displayEmployee()
     {
         
         System.out.println("emp ID: "+ employeeID);

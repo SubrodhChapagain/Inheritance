@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Electricitybill
+comment1.params=consumer\ units
+comment1.target=Electricitybill(java.lang.String,\ double)
+comment2.params=
+comment2.target=double\ calculatebill()
+numComments=3

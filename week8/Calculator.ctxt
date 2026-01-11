@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Calculator
+comment1.params=
+comment1.target=void\ displayinfo()
+comment2.params=a\ b
+comment2.target=void\ add(int,\ int)
+comment3.params=
+comment3.target=int\ getFixedNumber()
+comment4.params=c\ d
+comment4.target=int\ multiply(int,\ int)
+comment5.params=a
+comment5.target=int\ square(int)
+numComments=6

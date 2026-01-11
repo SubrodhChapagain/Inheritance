@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Car
+comment1.params=vehicle\ brand\ baseprice\ doors\ fuel
+comment1.target=Car(int,\ java.lang.String,\ int,\ int,\ java.lang.String)
+comment2.params=
+comment2.target=double\ calcualtefinalprice()
+numComments=3

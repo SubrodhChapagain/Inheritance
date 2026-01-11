@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=ShoppingCart
+comment1.params=item\ price\ quantity
+comment1.target=ShoppingCart(java.lang.String,\ double,\ int)
+comment2.params=quantity
+comment2.target=void\ setQuantity(int)
+comment3.params=
+comment3.target=int\ getQuantity()
+comment4.params=
+comment4.target=double\ calcualateTotal()
+comment5.params=discountpercentage
+comment5.target=double\ calculatediscount(double)
+comment6.params=
+comment6.target=void\ displaycart()
+numComments=7

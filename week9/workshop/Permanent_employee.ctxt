@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Permanent_employee
+comment1.params=emp\ name\ salary\ hra\ da
+comment1.target=Permanent_employee(int,\ java.lang.String,\ double,\ double,\ double)
+comment2.params=
+comment2.target=double\ calculatetotalsalary()
+numComments=3

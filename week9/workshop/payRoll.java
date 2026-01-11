@@ -8,11 +8,11 @@ public class payRoll
         ContractEmployee ce =new ContractEmployee(2, "Shyam", 1000, 20);
         
         System.out.println("PERMANENT EMPLOYEE");
-        pe.displayemployee();
+        pe.displayEmployee();
         
         System.out.println("Total Salary: " + pe.calculatetotalsalary());
         System.out.println("\nCONTRACT EMPLOYEE ");
-        ce.displayemployee();
+        ce.displayEmployee();
         
         System.out.println("Total Salary: " + ce.calculateTotalSalary());
     }
