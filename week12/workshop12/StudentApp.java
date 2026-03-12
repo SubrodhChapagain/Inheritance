@@ -1,5 +1,6 @@
 package week12.workshop12;
 import java.util.ArrayList;
+import java.util.*;
 
 
 /**
@@ -30,6 +31,17 @@ public class StudentApp
             }
         }
         
+        Iterator<Student> iterator = stu.iterator();
+        while (iterator.hasNext()) {
+         Student s = iterator.next();
+         if (s.getName().equals("Gaurav")) {
+            iterator.remove();  // Safe removal
+            s.setGroup("L1N2");
+            }
+        }
+        
+        
+        
         stu.set(0,new Student("Aavaya","L1C1",9876543213L));
         
         for(int i=0; i<stu.size(); i++)
@@ -59,12 +71,5 @@ public class StudentApp
         }
         
         
-        
-        
-        
-        
-        
-        
-    
     }
 }

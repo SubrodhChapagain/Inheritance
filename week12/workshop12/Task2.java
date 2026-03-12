@@ -44,6 +44,7 @@ public class Task2
         {
             System.out.println(arra);
         }
+        
         Iterator<String> ite = name.iterator();
         while(ite.hasNext())
         {
@@ -60,7 +61,7 @@ public class Task2
         System.out.println(number);
         
         System.out.println(name.get(2));
-        System.out.println(name.get(4));
+        
         
         
     }
