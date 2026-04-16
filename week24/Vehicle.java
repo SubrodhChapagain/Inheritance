@@ -1,8 +1,10 @@
 
 package week24;
+import java.io.Serializable;
 
-public abstract class Vehicle 
+public abstract class Vehicle implements Serializable
 {
+    private static final long SERIAL_VERSION_ID = 1L;
     private String name;
     private int speed;
 
@@ -25,4 +27,5 @@ public abstract class Vehicle
     public String getInfo() {
         return "Vehicle Name: " + name + ", Speed: " + speed + " km/h";
     }
+    
 }

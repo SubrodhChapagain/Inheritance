@@ -1,8 +1,10 @@
 
 package week24;
+import java.io.*;
 
-public class Car extends Vehicle 
+public class Car extends Vehicle implements Serializable
 {
+    private static final long SERIAL_VERSION_ID = 1L;
     private int seats;
     private double fuelEfficiency; 
     private double tankCapacity;

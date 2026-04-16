@@ -1,8 +1,10 @@
 
 package week24;
+import java.io.*;
 
-public class Bike extends Vehicle 
+public class Bike extends Vehicle implements Serializable
 {
+    private static final long SERIAL_VERSION_ID = 1L;
     private boolean hasCarrier;
     private int gearCount;
     private double distance;

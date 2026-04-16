@@ -7,6 +7,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 
 public class VehicleForm extends JFrame implements ActionListener {
 
@@ -194,23 +196,110 @@ public class VehicleForm extends JFrame implements ActionListener {
     private void saveToFile()
     {
         // PART 1: Write an arraylist data into textfiles
+        
+        try(FileWriter writer = new FileWriter("vehicle.txt"))
+        {
+            for (Vehicle v: vehicles)
+            {
+                if(v instanceof Car c)
+                {
+                    writer.write("car "+c.getName()+","+c.getSpeed()+","+c.getSeats()+","+c.getFuel()+","+c.getTank());
+                }
+                
+                else if (v instanceof Bike b)
+                {
+                    writer.write("Bike "+b.getName()+","+b.getSpeed()+b.getGear()+","+b.getDistance());
+                }
+            }
+            JOptionPane.showMessageDialog(this, "Saved success");
+        }
+        
+        catch(IOException e)
+        {
+            JOptionPane.showMessageDialog(this, "Save failed");
+        }
     }
 
     private void loadFromFile() 
     {
           // PART 2: Read from textfiles back to arraylist
+          try(BufferedReader br = new BufferedReader(new FileReader("vehicles.txt")))
+    {
+        String line;
+
+        while((line = br.readLine()) != null)
+        {
+            String[] data = line.split(",");
+
+            if(data[0].equals("Car"))
+            {
+                String name = data[1];
+                int speed = Integer.parseInt(data[2]);
+                int seats = Integer.parseInt(data[3]);
+                double fuel = Double.parseDouble(data[4]);
+                double tank = Double.parseDouble(data[5]);
+
+                vehicles.add(new Car(name, speed, seats, fuel, tank));
+            }
+            else if(data[0].equals("Bike"))
+            {
+                String name = data[1];
+                int speed = Integer.parseInt(data[2]);
+                int gear = Integer.parseInt(data[3]);
+                boolean carrier = Boolean.parseBoolean(data[4]);
+                double distance = Double.parseDouble(data[5]);
+
+                vehicles.add(new Bike(name, speed, carrier, gear, distance));
+            }
+        }
+
+        JOptionPane.showMessageDialog(this, "Data loaded successfully!");
     }
+    catch(IOException e)
+    {
+        JOptionPane.showMessageDialog(this, "Error loading file!");
+    }
+}
 
     private void serializeToFile()
     {
         // PART 3: Write the objects data into serialize files
       
+        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("vehicle.dat")))
+        {
+            oos.writeObject(vehicles);
+            
+            JOptionPane.showMessageDialog(this, "serialization");
+            
+        } catch(IOException e)
+        {
+            JOptionPane.showMessageDialog(this, "serialization failed");
+            
+        }
     }
 
 
     private void deserializeFromFile()
     {
          // PART4: Read from serialized file back to ArrayList
+         try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("vehicles.dat")))
+        {
+            vehicles = (ArrayList<Vehicle>) ois.readObject();
+            
+            
+            JOptionPane.showMessageDialog(this, "serialization");
+            
+            displayTable();
+            
+        } 
+      
+        catch(FileNotFoundException e){
+            JOptionPane.showMessageDialog(this, "File not found");
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(this,"invalid file format");
+        }
     }
 
     private void displayTable() 
